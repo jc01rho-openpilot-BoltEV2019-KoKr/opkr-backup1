@@ -155,14 +155,6 @@ class kegman_conf():
       if "steerActuatorDelay" not in self.config:
         self.config.update({"steerActuatorDelay":"0.15"})
         self.element_updated = True
-	
-      if "steerLimTimer" not in self.config:
-	self.config.update({"steerLimTimer":"0.8"})
-	self.element_updated = True
-	
-      if "tireStiffnessFactor" not in self.config:
-	self.config.update({"tireStiffnessFactor":"0.75"})
-	self.element_updated = True
 
       if self.element_updated:
         print("updated")
@@ -178,8 +170,7 @@ class kegman_conf():
                      "1barHwy":"0.4", "2barHwy":"0.3", "3barHwy":"0.1", \
                      "steerRatio":"-1", "steerRateCost":"-1", "slowOnCurves":"0", "Kf":"-1", \
                      "sR_boost":"0", "sR_BP0":"0", "sR_BP1":"0", "sR_time":"0.2", \
-                     "deltaUp":"3", "deltaDown":"5", "steerMax":"255", \
-		     "steerActuatorDelay":"0.15", "steerLimTimer":"0.8", "tireStiffnessFactor":"0.75", \
+                     "deltaUp":"3", "deltaDown":"5", "steerMax":"255", "steerActuatorDelay":"0.15", \
                      "leanStVelocity":"40", "leanLeftAmount":"0", "leanRightAmount":"0", \
                      "ALCnudgeLess":"0", "ALCminSpeed":"16.666667", "ALCtimer":"1.0", "CruiseDelta":"8", \
                      "CruiseEnableMin":"0"}
