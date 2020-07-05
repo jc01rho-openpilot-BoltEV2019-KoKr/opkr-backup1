@@ -7,6 +7,7 @@ from selfdrive.car.hyundai.carstate import CarState, get_can_parser, get_can2_pa
 from selfdrive.car.hyundai.values import Ecu, ECU_FINGERPRINT, CAR, FINGERPRINTS
 from selfdrive.car import STD_CARGO_KG, scale_rot_inertia, scale_tire_stiffness, is_ecu_disconnected, gen_empty_fingerprint
 from selfdrive.car.interfaces import CarInterfaceBase
+from selfdrive.kegman_conf import kegman_conf
 
 GearShifter = car.CarState.GearShifter
 ButtonType = car.CarState.ButtonEvent.Type
@@ -52,10 +53,11 @@ class CarInterface(CarInterfaceBase):
     ret.safetyModel = car.CarParams.SafetyModel.hyundai
     ret.enableCruise = True  # stock acc
 
-    ret.steerActuatorDelay = 0.15  # Default delay
+    kegman = kegman_conf()
+    ret.steerActuatorDelay = float(kegman.conf['steerActuatorDelay'])  # Default delay 0.15
     ret.steerRateCost = 0.45
-    ret.steerLimitTimer = 0.8
-    tire_stiffness_factor = 0.75
+    ret.steerLimitTimer = float(kegman.conf['steerLimitTimer']) #0.8
+    tire_stiffness_factor = float(kegman.conf['tireStiffnessFactor']) #0.75
 
     if candidate == CAR.SANTAFE:
       ret.lateralTuning.pid.kf = 0.00005
