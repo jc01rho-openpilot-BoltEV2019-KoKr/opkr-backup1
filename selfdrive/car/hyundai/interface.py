@@ -55,9 +55,9 @@ class CarInterface(CarInterfaceBase):
 
     kegman = kegman_conf()
     ret.steerActuatorDelay = float(kegman.conf['steerActuatorDelay'])  # Default delay 0.15
-    ret.steerRateCost = 0.45
-    ret.steerLimitTimer = float(kegman.conf['steerLimitTimer']) #0.8
+    ret.steerLimitTimer = float(kegman.conf['steerLimTimer']) #0.8
     tire_stiffness_factor = float(kegman.conf['tireStiffnessFactor']) #0.75
+    ret.steerRateCost = 0.45
 
     if candidate == CAR.SANTAFE:
       ret.lateralTuning.pid.kf = 0.00005
