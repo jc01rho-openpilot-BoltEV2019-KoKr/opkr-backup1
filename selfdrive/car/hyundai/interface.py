@@ -215,6 +215,14 @@ class CarInterface(CarInterfaceBase):
       tire_stiffness_factor = 0.385    # stiffnessFactor settled on 1.0081302973865127
       ret.lateralTuning.pid.kiBP, ret.lateralTuning.pid.kpBP = [[0.], [0.]]
       ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.10], [0.01]]
+    elif candidate == CAR.AVANTE_CN7:
+      ret.lateralTuning.pid.kf = 0.00005
+      ret.mass = 1245. + STD_CARGO_KG
+      ret.wheelbase = 2.72
+      ret.steerRatio = 13.5            # 14 is Stock | Settled Params Learner values are steerRatio: 15.401566348670535
+      tire_stiffness_factor = 0.385    # stiffnessFactor settled on 1.0081302973865127
+      ret.lateralTuning.pid.kiBP, ret.lateralTuning.pid.kpBP = [[0.], [0.]]
+      ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.10], [0.01]]
 
     ret.minEnableSpeed = -1.   # enable is done by stock ACC, so ignore this
 
