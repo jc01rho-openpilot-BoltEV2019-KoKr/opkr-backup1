@@ -42,7 +42,7 @@ def create_lkas11(packer, car_fingerprint, bus, apply_steer, steer_req, cnt, ena
     values["CF_Lkas_FcwOpt_USM"] = 2 if enabled else 1
     values["CF_Lkas_LdwsOpt_USM"] = 2
     values["CF_Lkas_SysWarning"] = 0
-  if car_fingerprint == CAR.AVNATE_CN7:
+  if car_fingerprint == CAR.AVANTE_CN7:
     values["CF_Lkas_FcwOpt_USM"] = 2 if enabled else 1
     values["CF_Lkas_LdwsOpt_USM"] = 2
     values["CF_Lkas_SysWarning"] = 0
