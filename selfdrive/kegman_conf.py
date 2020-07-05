@@ -154,7 +154,13 @@ class kegman_conf():
 	
       if "steerActuatorDelay" not in self.config:
         self.config.update({"steerActuatorDelay":"0.15"})
+        self.element_updated = True
+	
+      if "steerLimitTimer" not in self.config:
 	self.config.update({"steerLimitTimer":"0.8"})
+        self.element_updated = True
+	
+      if "tireStiffnessFactor" not in self.config:
 	self.config.update({"tireStiffnessFactor":"0.75"})
         self.element_updated = True
 
